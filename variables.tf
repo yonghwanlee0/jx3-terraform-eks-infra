@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------
 variable "region" {
   description = "AWS region code for creating resources."
-  type        = string
+  type        = "us-west-2"
 }
 
 variable "profile" {
@@ -13,7 +13,7 @@ variable "profile" {
 
 variable "cluster_version" {
   description = "Kubernetes version to use for the EKS cluster."
-  type        = string
+  type        = "1.23"
 }
 
 variable "vault_user" {
@@ -42,17 +42,17 @@ variable "is_jx2" {
 
 variable "jx_git_url" {
   description = "URL for the Jenins X cluster git repository"
-  type        = string
+  type        = "https://github.com/yonghwanlee0/jx3-terraform-eks-infra"
 }
 
 variable "jx_bot_username" {
   description = "Bot username used to interact with the Jenkins X cluster git repository"
-  type        = string
+  type        = "yonghwanlee0"
 }
 
 variable "jx_bot_token" {
   description = "Bot token used to interact with the Jenkins X cluster git repository"
-  type        = string
+  type        = "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"
 }
 
 variable "nginx_chart_version" {
