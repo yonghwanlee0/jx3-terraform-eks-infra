@@ -3,17 +3,20 @@
 // ----------------------------------------------------------------------------
 variable "region" {
   description = "AWS region code for creating resources."
-  type        = "us-west-2"
+  type        = string
+  default     = "us-west-2"
 }
 
 variable "profile" {
   description = "Profile stored in aws config or credentials file"
   type        = string
+  default     = ""
 }
 
 variable "cluster_version" {
   description = "Kubernetes version to use for the EKS cluster."
-  type        = "1.23"
+  type        = string
+  default     = "1.23"
 }
 
 variable "vault_user" {
@@ -35,29 +38,32 @@ variable "force_destroy" {
 }
 
 variable "is_jx2" {
-  default     = false
-  type        = bool
   description = "Flag to specify if jx2 related resources need to be created"
+  type        = bool
+  default     = false
 }
 
 variable "jx_git_url" {
   description = "URL for the Jenins X cluster git repository"
-  type        = "https://github.com/yonghwanlee0/jx3-terraform-eks-infra"
+  type        = string
+  default     = "https://github.com/yonghwanlee0/jx3-terraform-eks-infra"
 }
 
 variable "jx_bot_username" {
   description = "Bot username used to interact with the Jenkins X cluster git repository"
-  type        = "yonghwanlee0"
+  type        = string
+  default     = "yonghwanlee0"
 }
 
 variable "jx_bot_token" {
   description = "Bot token used to interact with the Jenkins X cluster git repository"
-  type        = "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"
+  type        = string
+  default     = "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"
 }
 
 variable "nginx_chart_version" {
-  type        = string
   description = "nginx chart version"
+  type        = string
   default     = "3.12.0"
 }
 
